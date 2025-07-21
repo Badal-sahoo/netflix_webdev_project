@@ -1,0 +1,660 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* ✅ Ensures padding and border don't affect overall width/height 
+       🔗 Helps maintain layout across different devices */
+}
+
+html,
+body {
+    overflow-x: hidden;
+    background-color: black;
+}
+
+.background,
+.body2,
+.body3 {
+    width: 100%;
+}
+
+
+.background {
+    background-image: url(image/bg.jpg);
+    height: 90vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.bg {
+    background-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.7));
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.navbar {
+    background-color: transparent;
+    width: 83vw;
+    /* ✅ Changed from 80vw to 90vw for more flexibility on small screens 
+       🔗 Prevents elements from overflowing on mobile */
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* ✅ Ensures logo and sign-in are spaced apart */
+    flex-wrap: wrap;
+    /* ✅ Allows items to stack on small screens 
+       🔗 Prevents overlapping when screen is narrow */
+    gap: 10px;
+    /* ✅ Adds space between logo and sign-in when stacked */
+}
+
+.bg-body {
+    width: 100%;
+    height: calc(100% - 235px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    /* ✅ Adds horizontal padding on smaller screens 
+       🔗 Avoids content touching edges on mobile */
+}
+
+.netflix-logo {
+    width: auto;
+}
+
+.netflix-logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+@media (max-width: 960px) {
+    .netflix-logo img {
+        height: 24px;
+        /* ✅ Smaller logo on smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .lang select {
+        display: none;
+        /* ✅ Hide language dropdown for ultra small screens */
+    }
+
+    .lang {
+        width: 60px !important;
+        /* ✅ Compress language selector */
+    }
+}
+
+.lang-sign {
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    /* ✅ Added gap for better spacing in flexbox */
+}
+
+.lang {
+    height: 30px;
+    width: 130px;
+    border: 0.5px solid rgb(184, 182, 182);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+}
+
+.lang select {
+    border: none;
+    background-color: transparent;
+    appearance: none;
+    font-size: 16px;
+    color: #fff;
+}
+
+.lang-logo {
+    color: #fff;
+    margin-right: 3px;
+}
+
+.lang-logo2 {
+    font-size: small;
+    color: #fff;
+    margin-left: 5px;
+}
+
+.lang-sign button {
+    border-radius: 6px;
+    background-color: red;
+    color: white;
+    height: 30px;
+    width: 70px;
+    font-size: 16px;
+    font-weight: 300;
+    border: none;
+}
+
+.bbt {
+    width: 90vw;
+    /* ✅ Changed from 40vw to use more space on small screens */
+    max-width: 600px;
+    /* ✅ Prevents it from becoming too wide on large screens */
+    text-align: center;
+}
+
+.bbt1 h1 {
+    font-family: "Martel Sans", sans-serif;
+    color: #fff;
+    font-size: clamp(1.8rem, 5vw, 3.2rem);
+    /* ✅ Makes heading font responsive
+       🔗 Adapts to screen size gracefully */
+    font-weight: 900;
+    line-height: 130%;
+    text-align: center;
+}
+
+.bbt1 p {
+    color: #fff;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    /* ✅ Responsive paragraph font size */
+    text-align: center;
+    font-weight: bolder;
+}
+
+.bbt1 {
+    padding-bottom: 30px;
+}
+
+.bbt2 h3 {
+    color: #fff;
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
+    /* ✅ Responsive subheading font */
+    font-weight: 200;
+    text-align: center;
+}
+
+.bbt2 {
+    margin-bottom: 10px;
+}
+
+.bbt3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* ✅ Allows input and button to stack on small screens */
+    gap: 10px;
+    /* ✅ Space between input and button when side-by-side or stacked */
+    width: 100%;
+    max-width: 600px;
+}
+
+.bbt3-input {
+    position: relative;
+    height: 60px;
+    flex: 1 1 200px;
+    /* ✅ Input takes remaining space, but min-width is 200px
+       🔗 Ensures flexibility with readability */
+    min-width: 200px;
+    max-width: 60%;
+    border: 0.5px solid rgb(176, 175, 175);
+    border-radius: 5px;
+}
+
+.bbt3 input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: #fff;
+    padding-left: 10px;
+    font-size: 1em;
+}
+
+.bbt3 label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.bbt3 input:focus~label,
+.bbt3 input:valid~label {
+    top: 20%;
+    font-size: 0.7em;
+}
+
+/* ✅ Button is always 150px wide even when it wraps to next line */
+.bbt3 button {
+    height: 60px;
+    width: 220px;
+    min-width: 220px;
+    /* ✅ Prevents it from shrinking below 150px 
+       🔗 Ensures consistent size when wrapped */
+    max-width: 220px;
+    /* ✅ Locks the width to 150px max as well */
+    /* flex-shrink: 0;  */
+    /* ✅ Stops the button from shrinking when input grows 
+       🔗 Ensures layout integrity in flex container */
+    font-size: 20px;
+    background-color: red;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    white-space: nowrap;
+    /* ✅ Prevents text from breaking into new line */
+}
+
+.design1 {
+    width: 100%;
+    height: 75px;
+    background: linear-gradient(to right, rgba(33, 13, 22, 1) 16%, rgba(184, 40, 105, 1), rgba(229, 9, 20, 1), rgba(184, 40, 105, 1), rgba(33, 13, 22, 1) 84%);
+    position: absolute;
+    bottom: 0;
+    clip-path: ellipse(60% 100% at 50% 100%);
+
+}
+
+.design1-border {
+    width: 100%;
+    height: 70px;
+    background: radial-gradient(50% 500% at 50% -420%, rgba(64, 97, 231, 0.4) 80%, rgba(0, 0, 0, 0.1) 100%), black;
+    position: absolute;
+    bottom: 0;
+    clip-path: ellipse(60% 100% at 50% 100%);
+
+}
+
+.body2 {
+    width: 100vw;
+    height: 37vh;
+    background-color: black;
+    position: relative;
+}
+
+.trendhead {
+    width: 100%;
+    height: 5vh;
+    position: absolute;
+    top: 0;
+    left: 10vw;
+}
+
+.body2-2 {
+    width: 100%;
+    height: 30vh;
+    position: absolute;
+    top: 5vh;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.body2-2 button:hover {
+    background-color: rgb(74, 74, 74);
+}
+
+.top10 {
+    width: 80vw;
+    height: 30vh;
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+.body2-2 button {
+    width: 25px;
+    height: 130px;
+    background-color: rgb(31, 31, 31);
+    border-radius: 10px;
+    border: none;
+    margin: 0 10px 0 10px;
+}
+
+.body2-2 button span {
+    font-size: 200%;
+    color: #fff;
+}
+
+.titems {
+    padding: 1em;
+    position: relative;
+}
+
+.titems img,
+.titems p {
+    transition: 0.5s;
+}
+
+.titems:hover img,
+.titems:hover p {
+    transform: scale(1.1);
+}
+
+.titems img {
+    height: 13.4em;
+    width: auto;
+    border-radius: 10px;
+    object-fit: contain;
+    display: block;
+}
+
+.titems p {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+    color: rgb(255, 255, 255);
+    font-size: 5em;
+    font-weight: bold;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.trendhead h2 {
+    color: #fff;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+}
+
+.body3 {
+    width: 100%;
+    height: 45vh;
+    background-color: rgb(0, 0, 0);
+    position: relative;
+}
+
+.b3head {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5vh;
+    margin-left: 10%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: larger;
+    font-weight: 600;
+}
+
+.body3-2 {
+    position: absolute;
+    top: 5vh;
+    left: 0;
+    height: 30vh;
+    width: 100%;
+
+}
+
+.b3box {
+    height: 30vh;
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.box {
+    height: auto;
+    width: 24%;
+    background-image: linear-gradient(135deg, rgba(64, 97, 231, 0.4) 30%, rgb(64, 1, 1));
+    border-radius: 15px;
+    min-height: 70px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    color: #fff;
+    flex-direction: column;
+    padding: 30px 15px;
+}
+
+.box h1 {
+    font-size: 1.7em;
+}
+
+.box p {
+    color: rgb(181, 181, 181);
+    font-size: 1.2em;
+}
+
+@media(max-width:1500px) {
+    .box {
+        width: 49%;
+    }
+}
+
+@media(max-width:1000px) {
+    .box {
+        width: 99%;
+    }
+}
+
+.body4 {
+    height: 80vh;
+    width: 100vw;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.question {
+    height: 10%;
+    width: 80%;
+    background-color: rgb(45, 45, 45);
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.nquestion {
+    font-size: 1.6em;
+    margin-left: 1%;
+}
+
+.b4title {
+    align-self: flex-start;
+    margin-left: 10%;
+    margin-bottom: 10px;
+}
+
+.plusicon {
+    font-size: 3em;
+    margin-right: 20px;
+}
+
+.faq {
+    height: auto;
+    width: 80%;
+    background-color: rgb(45, 45, 45);
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 0;
+    /* display: none; */
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.faq.show {
+    /* display: block; */
+    max-height: 800px;
+}
+
+.faqp {
+    font-size: 1.6em;
+    margin-left: 1%;
+    padding: 1%;
+}
+
+.plusicon {
+    transition: transform 0.3s ease;
+}
+
+.plusicon.rotate {
+    transform: rotate(45deg);
+    /* + becomes × */
+}
+
+.email2 {
+    height: 20vh;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.email2>h3 {
+    margin-bottom: 10px;
+}
+
+.bbt31 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    /* ✅ Space between input and button when side-by-side or stacked */
+    width: 100%;
+    max-width: 600px;
+}
+
+.bbt31-input {
+    position: relative;
+    height: 60px;
+    flex: 1 1 200px;
+    /* ✅ Input takes remaining space, but min-width is 200px
+       🔗 Ensures flexibility with readability */
+    min-width: 700px;
+    max-width: 700px;
+    border: 0.5px solid rgb(176, 175, 175);
+    border-radius: 5px;
+}
+
+.bbt31 input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: #fff;
+    padding-left: 10px;
+    font-size: 1em;
+}
+
+.bbt31 label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.bbt31 input:focus~label,
+.bbt31 input:valid~label {
+    top: 20%;
+    font-size: 0.7em;
+}
+
+/* ✅ Button is always 150px wide even when it wraps to next line */
+.bbt31 button {
+    height: 60px;
+    width: 220px;
+    min-width: 220px;
+    /* ✅ Prevents it from shrinking below 150px 
+       🔗 Ensures consistent size when wrapped */
+    max-width: 220px;
+    /* ✅ Locks the width to 150px max as well */
+    /* flex-shrink: 0;  */
+    /* ✅ Stops the button from shrinking when input grows 
+       🔗 Ensures layout integrity in flex container */
+    font-size: 20px;
+    background-color: red;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    white-space: nowrap;
+    /* ✅ Prevents text from breaking into new line */
+}
+footer{
+    background-color: black;
+    color: gray;
+    height: 30vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.footer {
+    height: 80%;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 3px;
+    padding: 5px;
+
+}
+
+a {
+    color: gray;
+}
+.link1{
+    grid-column: 1 / -1;
+}
+#lang{
+    align-self: flex-start;
+    margin-left: 10%;
+}
+.ending {
+  align-self: flex-start;
+  margin-left: 10%;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.end {
+  margin: 10px 0 10px 0;
+}
+.enda{
+    color: rgb(45, 128, 251);
+}
